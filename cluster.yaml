@@ -6,8 +6,10 @@ metadata:
   region: us-east-1
 
 nodeGroups:
-  - name: nodeGroup2
+  - name: nodeGroup
     instanceType: t2.micro
-    desiredCapacity: 2
+    desiredCapacity: 0
+    minSize: 0
+    maxSize: 2
     ssh:
       publicKeyPath: ~/.ssh/pbaitule_aws_pub
