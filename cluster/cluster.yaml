@@ -6,8 +6,8 @@ metadata:
   region: us-east-1
 
 nodeGroups:
-  - name: nodeGroup
-    instanceType: t2.micro
+  - name: nodeGroup1
+    instanceType: t2.small
     desiredCapacity: 2
     minSize: 2
     maxSize: 2
