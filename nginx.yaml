@@ -1,0 +1,11 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+
+metadata:
+  name: nginx
+  namespace: default
+
+spec:
+  chart:
+    repository: https://github.com/pbaitule/platform-eks.git
+    name: platform-eks
