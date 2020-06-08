@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: pbaitule/basic-nginx-webserver:latest
+          image: pbaitule/basic-nginx-webserver:57b85c395874d522300975ee57e5345b0e57a69b
           ports:
             - containerPort: 80
