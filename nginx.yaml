@@ -9,3 +9,4 @@ spec:
   chart:
     repository: https://github.com/pbaitule/platform-eks.git
     name: platform-eks
+    path: nginx
