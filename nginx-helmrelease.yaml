@@ -13,7 +13,7 @@ spec:
   chart:
     git: https://github.com/pbaitule/platform-eks.git
     ref: master
-    path: nginx
+    path: charts/nginx
   values:
     image:
       registry: docker.io
