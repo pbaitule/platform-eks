@@ -6,6 +6,7 @@ metadata:
   namespace: default
   annotations:
     flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:master-*
 
 spec:
   helmVersion: v3
@@ -22,6 +23,7 @@ spec:
     service:
       type: NodePort
       port: 80
+    replicaCount: 3
 
 ingress:
   enabled: true
