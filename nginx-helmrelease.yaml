@@ -1,0 +1,34 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+
+metadata:
+  name: basic-nginx-webserver
+  namespace: default
+  annotations:
+    flux.weave.works/automated: "true"
+
+spec:
+  helmVersion: v3
+  releaseName: basic-nginx-webserver
+  chart:
+    git: https://github.com/pbaitule/platform-eks.git
+    ref: master
+    path: nginx
+  values:
+    image:
+      registry: docker.io
+      repository: pbaitule/basic-nginx-webserver
+      tag: 593ceb02b7c1774e0576d54b687df87d1245982c
+    service:
+      type: NodePort
+      port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  hosts:
+    - host:
+      paths:
+        - /*
